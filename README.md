@@ -7,4 +7,12 @@ Random uniform using elementary cellular automata in matlab.
 
 - [x] rule 30 function that given state produces next state
 - [x] run the rule for x interations and visualize outputs
-- [ ] come up with next steps
+- [ ] convert middle bits into numbers
+- [ ] seed strategy
+- [ ] visualize histogram
+- [ ] statistical tests versus uniform dist
+
+## References
+
+- https://mathworld.wolfram.com/Rule30.html
+- https://demonstrations.wolfram.com/UsingRule30ToGeneratePseudorandomRealNumbers/#more

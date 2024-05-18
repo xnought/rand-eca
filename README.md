@@ -7,7 +7,8 @@ Random uniform using elementary cellular automata in matlab.
 
 - [x] rule 30 function that given state produces next state
 - [x] run the rule for x interations and visualize outputs
-- [ ] convert middle bits into numbers
+- [x] convert middle bits into numbers
+- [x] function(seed, rule, width, num_bits, num_numbers) -> decimal list (potentially)
 - [ ] seed strategy
 - [ ] visualize histogram
 - [ ] statistical tests versus uniform dist

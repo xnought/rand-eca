@@ -1,4 +1,4 @@
-function middle_column = eca_run_middle_column(start_state, rule, iterations)
+function [middle_column, end_state] = eca_run_middle_column(start_state, rule, iterations)
     middle_column = zeros(1, iterations);
     middle = ceil(length(start_state) / 2);
     for i=1:iterations
@@ -7,4 +7,5 @@ function middle_column = eca_run_middle_column(start_state, rule, iterations)
     end
 
     middle_column(end) = start_state(middle);
+    end_state = start_state;
 end

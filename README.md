@@ -8,10 +8,10 @@ Random uniform using elementary cellular automata in matlab.
 - [x] run the rule for x interations and visualize outputs
 - [x] convert middle bits into numbers
 - [x] function(seed, rule, width, num_bits, num_numbers) -> decimal list (potentially)
-- [ ] sampling strategy
+- [x] sampling strategy
+- [x] visualize histogram
+- [ ] statistical tests versus uniform dist or metrics
 - [ ] seed strategy
-- [ ] visualize histogram
-- [ ] statistical tests versus uniform dist
 
 ## Sampling Strategy
 

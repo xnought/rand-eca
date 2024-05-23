@@ -11,7 +11,10 @@ Random uniform using elementary cellular automata in matlab.
 - [x] sampling strategy
 - [x] visualize histogram
 - [ ] statistical tests versus uniform dist or metrics
-- [ ] seed strategy
+	- [x] function that takes bins within [0, 1.0] and counts the occurences within the bins
+	- [x] compute mse versus true uniform and our numbers
+	- [ ] compute $\chi^2$ for my function and the built in
+- [ ] 
 
 ## Sampling Strategy
 
@@ -27,3 +30,4 @@ Run for 8 iterations, I take the middle column and convert to decimal binary.
 
 - https://mathworld.wolfram.com/Rule30.html
 - https://demonstrations.wolfram.com/UsingRule30ToGeneratePseudorandomRealNumbers/#more
+- https://www.youtube.com/watch?v=oe_qk31wGLY

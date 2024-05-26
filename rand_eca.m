@@ -11,6 +11,7 @@ function rand_nums = rand_eca(rows, columns)
     timesteps = bits_per_number*n;
     [middle_column, seed] = eca_run_middle_column(seed, rule30, timesteps);
 
+
     % Convert midle rows from eca to fractions between [0, 1.0)
     binary_fraction_powers = 2.^(-1:-1:-bits_per_number); % for the binary to fraction conversion 2^{-1}, 2^{-2}, ...
     rand_nums = zeros(1, n);

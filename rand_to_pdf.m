@@ -7,12 +7,8 @@ function transformed = rand_to_pdf(rand_sample, pdf, t_a, t_b, num_rectangles)
     
     % then map the random uniform to those xs from the pdf
     % weighed by the pdf area for that rectangle
-    r = rand_sample(:);
-    source_bins = cumsum(areas); % the bins in the uniform distrubtion sized by the pdf areas 
-    transformed = zeros(1, length(r));
-    for i=1:length(r)
-        target_i = find_bin(r(i), source_bins);
-        transformed(i) = target_xs(target_i);
-    end
-    transformed = reshape(transformed, size(rand_sample));
+    r = reshape(rand_sample, [], 1); % column vector
+    source_bins = cumsum(areas); % the bins in the uniform distrubtion sized by the pdf areas
+    target_rectangles_indexes = find_thread_over_rows(r < source_bins); % map the rand uniform to a rectangle in the pdf
+    transformed = reshape(target_xs(target_rectangles_indexes), size(rand_sample)); % grab the pdf x_i coordinate from the rectangles
 end

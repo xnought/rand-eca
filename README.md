@@ -13,8 +13,17 @@ Random uniform using elementary cellular automata in matlab.
 - [ ] statistical tests versus uniform dist or metrics
 	- [x] function that takes bins within [0, 1.0] and counts the occurences within the bins
 	- [x] compute mse versus true uniform and our numbers
-	- [ ] compute $\chi^2$ for my function and the built in
-- [ ] write outline for report
+	- [x] compute $\chi^2$ for my function and the built in
+- [x] write outline for report
+- [x] do the transform to any other pdf
+- [ ] Create figure describing ECA
+- [ ] Create sampling strategy figure
+- [ ] Write out the ECA visulize in report
+- [ ] Write out the rand\_eca in the report 
+- [ ] Write out the statistical tests
+- [ ] Create figure for the stastitical tests
+- [ ] Write implementation on the transform to any other pdf
+- [ ] Create figure showing conversion to other pdfs
 
 ## Sampling Strategy
 

@@ -1,26 +1,21 @@
 function rand_nums = rand_eca(rows, columns)    
     bits_per_number = 13;
     global seed
-    global rule
     if isempty(seed)
-       rng_eca(); % initialize the seed value
+       rng_eca(0); % initialize the seed value
     end
 
-    % Iterate eca rule 30 
-    n = rows*columns;
-    timesteps = bits_per_number*n;
-    [middle_column, seed] = eca_run_middle_column(seed, rule, timesteps);
+    % Iterate Elemntary Cellular Automata (ECA) Rule 30 
+    n = rows*columns; 
+    n_iterations_single_column = n*bits_per_number;
+    n_iterations_all_columns = ceil(n_iterations_single_column/length(seed));
+    eca_generations  = iterate_rule30(seed, n_iterations_all_columns);
+    % and set the next seed as the last computed row
+    seed = eca_generations(end, :); 
 
-
-    % Convert midle rows from eca to fractions between [0, 1.0)
-    binary_fraction_powers = 2.^(-1:-1:-bits_per_number); % for the binary to fraction conversion 2^{-1}, 2^{-2}, ...
-    rand_nums = zeros(1, n);
-    for i=1:n
-        end_bit_index = i*bits_per_number;
-        start_bit_index = end_bit_index - (bits_per_number - 1);
-        bits = middle_column(start_bit_index:end_bit_index);
-        rand_nums(i) = sum(bits .* binary_fraction_powers);
-    end
-    
-    rand_nums = reshape(rand_nums, rows, columns);
+    % flatten into bit string and convert to decimal notation
+	bits = reshape(eca_generations, 1, []); 
+    rand_nums = bits_to_fractions(bits, n, bits_per_number);
+    % size like user specified (rows, columns)
+    rand_nums = reshape(rand_nums, rows, columns); 
 end

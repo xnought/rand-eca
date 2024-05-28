@@ -1,38 +1,37 @@
-function out_bit = eca_apply_rule(in_vec3, rule)
-    % three bits correspond the colors, will produce an output bit based on
-    % the rule
-    % ⬜ -> 0, ⬛ -> 1
+function out_bit = rule30(in_vec3)
+    % Applies rule 30 to a certain corresponding 3 cell states
+    %  ⬛=1, ⬜=0
 
     % ⬛⬛⬛
     if in_vec3(1) && in_vec3(2) && in_vec3(3)
-        out_bit = rule(1);
+        out_bit = 0; % ⬜ 
     
     % ⬛⬛⬜
     elseif in_vec3(1) && in_vec3(2) && ~in_vec3(3)
-        out_bit = rule(2);
+        out_bit = 0; % ⬜ 
 
     % ⬛⬜⬛
     elseif in_vec3(1) && ~in_vec3(2) && in_vec3(3)
-        out_bit = rule(3);
+        out_bit = 0; % ⬜ 
 
     % ⬛⬜⬜
     elseif in_vec3(1) && ~in_vec3(2) && ~in_vec3(3)
-        out_bit = rule(4);
+        out_bit = 1; % ⬛
 
     % ⬜⬛⬛
     elseif ~in_vec3(1) && in_vec3(2) && in_vec3(3)
-        out_bit = rule(5);
+        out_bit = 1; % ⬛
 
     % ⬜⬛⬜
     elseif ~in_vec3(1) && in_vec3(2) && ~in_vec3(3)
-        out_bit = rule(6);
+        out_bit = 1; % ⬛
     
     % ⬜⬜⬛
     elseif ~in_vec3(1) && ~in_vec3(2) && in_vec3(3)
-        out_bit = rule(7);
+        out_bit = 1; % ⬛
 
     % ⬜⬜⬜
     else
-        out_bit = rule(8);
+        out_bit = 0; % ⬜ 
     end
 end

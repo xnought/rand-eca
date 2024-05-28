@@ -1,4 +1,7 @@
 function rand_nums = rand_eca(rows, columns)    
+    % Computes random numbers uniformly [0, 1) using Elementary Cellular Automata Rule 30
+    % you specifiy the size (rows, columns) of the matrix of random numbers you get
+
     bits_per_number = 13;
     global seed
     if isempty(seed)

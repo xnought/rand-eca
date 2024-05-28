@@ -21,6 +21,6 @@ Random uniform using elementary cellular automata in matlab.
 - [x] Write out the ECA visulize in report
 - [x] Write out the rand\_eca in the report 
 - [ ] Write out the statistical tests
-- [ ] Create figure for the stastitical tests
+- [ ] Create figure for the statistical tests
 - [ ] Write implementation on the transform to any other pdf
 - [ ] Create figure showing conversion to other pdfs

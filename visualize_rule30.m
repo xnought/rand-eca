@@ -7,5 +7,6 @@ function visualize_rule30(start_state, n_iterations, visualize_from_i)
     to_visualize = [start_state; 
                     eca_generations];
     % show 1s as black cells and 0s as white cells
-    imshow(not(to_visualize(visualize_from_i:end, :)), "InitialMagnification", 1000)
+    invert_colors = not(to_visualize(visualize_from_i:end, :));
+    imshow(invert_colors, "InitialMagnification", 1000)
 end

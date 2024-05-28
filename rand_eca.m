@@ -16,7 +16,7 @@ function rand_nums = rand_eca(rows, columns)
     n = rows*columns; 
     num_bits_to_generate = n*bits_per_number;
     n_iterations = ceil(num_bits_to_generate/length(seed));
-    n_iterations = max(bits_per_number, n_iterations) % at least need to iterate bits_per_number times!
+    n_iterations = max(bits_per_number, n_iterations); % at least need to iterate bits_per_number times!
     eca_generations = iterate_rule30(seed, n_iterations);
     seed = eca_generations(end, :);  % and set the next seed as the last computed row
 

@@ -18,7 +18,11 @@ function rng_eca(offset)
     % exposed globally so the rand_eca can access these things
     global seed 
     global bits_per_number % numerical precision
+    global upper_memory_limit 
 
     seed = start_state;
     bits_per_number = 13;
+    % we store upper_memory_limit*length(seed) numbers at any given time
+    % must be multiple of bits_per_number
+    upper_memory_limit = 16*bits_per_number; 
 end

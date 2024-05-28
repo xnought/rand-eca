@@ -15,6 +15,10 @@ function rng_eca(offset)
 		start_state = next_state_rule30(start_state);
     end
 
-    global seed % exposed globally so the rand_eca can access the seed and set it when it's done
+    % exposed globally so the rand_eca can access these things
+    global seed 
+    global bits_per_number % numerical precision
+
     seed = start_state;
+    bits_per_number = 13;
 end

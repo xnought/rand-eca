@@ -5,25 +5,30 @@ function rand_nums = rand_eca(rows, columns)
     % these values are set from rng_eca function
     global seed
     global bits_per_number 
-    global upper_memory_limit 
+    global upper_memory_limit
 
     % initialize the seed if not found globally
     if isempty(seed)
        rng_eca(0); % initialize the seed value
     end
 
-    % Iterate Elemntary Cellular Automata (ECA) Rule 30 
-    n = rows*columns; 
-    num_bits_to_generate = n*bits_per_number;
-    n_iterations = ceil(num_bits_to_generate/length(seed));
-    n_iterations = max(bits_per_number, n_iterations); % at least need to iterate bits_per_number times!
-    eca_generations = iterate_rule30(seed, n_iterations);
-    seed = eca_generations(end, :);  % and set the next seed as the last computed row
+    % Iterate rule 30 to generate random numbers  
+    n = rows*columns;
+    % Chunk over the timesteps instead of computing all at once to save memory
+    [num_chunks, n_iterations_per_chunk, decimal_nums_per_chunk] = compute_chunks(n, bits_per_number, length(seed), upper_memory_limit);
+    rand_nums = zeros(num_chunks, decimal_nums_per_chunk);
+    for i=1:num_chunks
+        % Generate elementary cellular automata 
+        eca_generations = iterate_rule30(seed, n_iterations_per_chunk);
+        seed = eca_generations(end, :); % update seed with last ECA row
 
-    % Convert the generated columns into fractions [0, 1)
-	bits = reshape(eca_generations, 1, []); 
-    rand_nums = bits_to_fractions(bits, n, bits_per_number);
-    
+        % Convert the generated columns into fractions [0, 1)
+        bits = reshape(eca_generations, 1, []);
+        bits_to_fractions(bits, decimal_nums_per_chunk, bits_per_number);
+        rand_nums(i, :) = bits_to_fractions(bits, decimal_nums_per_chunk, bits_per_number);
+    end
+
     % Return matrix with specified shape (rows, columns)
-    rand_nums = reshape(rand_nums, rows, columns); 
+    rand_nums = reshape(rand_nums, 1, []);
+    rand_nums = reshape(rand_nums(1:n), rows, columns);
 end

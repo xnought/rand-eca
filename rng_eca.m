@@ -24,5 +24,5 @@ function rng_eca(offset)
     bits_per_number = 13;
     % we store upper_memory_limit*length(seed) numbers at any given time
     % must be multiple of bits_per_number
-    upper_memory_limit = 16*bits_per_number; 
+    upper_memory_limit = 32*bits_per_number; 
 end

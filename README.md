@@ -10,7 +10,7 @@ Random uniform using elementary cellular automata in matlab.
 - [x] function(seed, rule, width, num_bits, num_numbers) -> decimal list (potentially)
 - [x] sampling strategy
 - [x] visualize histogram
-- [ ] statistical tests versus uniform dist or metrics
+- [x] statistical tests versus uniform dist or metrics
 	- [x] function that takes bins within [0, 1.0] and counts the occurences within the bins
 	- [x] compute mse versus true uniform and our numbers
 	- [x] compute $\chi^2$ for my function and the built in

@@ -1,4 +1,4 @@
-function transformed = rand_to_pdf(rand_sample, pdf, t_a, t_b, num_rectangles)
+function [transformed, areas, target_xs, target_ys] = uniform_to_pdf(rand_sample, pdf, t_a, t_b, num_rectangles)
     % compute target mapping areas and what x they correspond to
     dx = (t_b - t_a) / num_rectangles;
     target_xs = t_a:dx:(t_b-dx); % rectangle start coordinate x_i

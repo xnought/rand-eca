@@ -3,11 +3,11 @@ function [num_chunks, n_iterations_per_chunk, decimal_nums_per_chunk] = num_iter
     % so if you want to iterate 
     % put n_iterations into smaller chunks to limit memory use for large n_iterations
 
-	% important high-level numbers
+    % important high-level numbers
     total_bits_to_generate = total_numbers_to_generate*bits_per_number;
     num_eca_columns = seed_width;
 
-	% ECA iterations and chunk size to limit memory consumptions
+    % ECA iterations and chunk size to limit memory consumptions
     % column must be atelast of length bits_per_number, but can be more
     n_iterations = max(bits_per_number, ceil(total_bits_to_generate/num_eca_columns));
     % break up the n_iterations into smaller chunks

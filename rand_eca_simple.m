@@ -22,7 +22,7 @@ function rand_nums = rand_eca_simple(rows, columns)
     seed = eca_generations(end, :);  % and set the next seed as the last computed row
 
     % Convert the generated columns into fractions [0, 1)
-	bits = reshape(eca_generations, 1, []); 
+    bits = reshape(eca_generations, 1, []); 
     rand_nums = bits_to_fractions(bits, n, bits_per_number);
     
     % Return matrix with specified shape (rows, columns)

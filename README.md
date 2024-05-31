@@ -1,6 +1,6 @@
 # rand-eca
 
-Random uniform using elementary cellular automata in matlab.
+Random uniform using elementary cellular automata in matlab. Please see the paper report TODO LINK.
 
 <img src="assets/256.png" alt="elementary cellular automata rule 30 with width 200 for 100 iterations"/>
 
@@ -23,4 +23,4 @@ Random uniform using elementary cellular automata in matlab.
 - [x] Write out the statistical tests
 - [x] Create figure for the statistical tests
 - [x] Write implementation on the transform to any other pdf
-- [ ] Create figure showing conversion to other pdfs
+- [x] Create figure showing conversion to other pdfs

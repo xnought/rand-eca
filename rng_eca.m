@@ -12,7 +12,7 @@ function rng_eca(offset)
     % we get rid of the pyramid like pattern
     warmup = padding + offset;
     for i=1:warmup
-    start_state = next_state_rule30(start_state);
+        start_state = next_state_rule30(start_state);
     end
 
     % exposed globally so the rand_eca can access these things

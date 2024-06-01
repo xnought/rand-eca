@@ -1,6 +1,8 @@
 # `rand_eca`
 A function like Matlabs built-in `rand`, but with elementary cellular automata rule 30 -> `rand_eca`. 
 
+Created as part of the final project for MTH 321 Intro to Math Software class at Oregon State University taught by [Dr. Torrey Johnson](https://math.oregonstate.edu/directory/torrey-a-johnson).
+
 - [Paper Report](https://xnought.github.io/files/rand_eca.pdf) detailing implementation and examples
 - [`paper_figures.mlx`](./paper_figures.mlx) Matlab live script to reproduce the figures and statistical tests from the paper
 

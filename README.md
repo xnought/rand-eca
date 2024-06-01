@@ -8,6 +8,8 @@ Created as part of the final project for MTH 321 Intro to Math Software class at
 
 ## Usage
 
+See [`paper_figures.mlx`](./paper_figures.mlx) for some real examples. Or keep reading for some basic usage:
+
 Create a 5 by 5 matrix of random numbers with
 
 ```matlab

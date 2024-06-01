@@ -63,8 +63,8 @@ ans =
 Resetting the seed, as you can see genereates the same numbers after subsequent calls
 
 ```matlab
->> rng_eca(0)
->> rand_eca(5,5)
+>>> rng_eca(0)
+>>> rand_eca(5,5)
 
 ans =
 
@@ -74,8 +74,8 @@ ans =
     0.6902    0.5453    0.6776    0.0731    0.1528
     0.5684    0.4788    0.3795    0.9459    0.3949
 
->> rng_eca(0)
->> rand_eca(5,5)
+>>> rng_eca(0)
+>>> rand_eca(5,5)
 
 ans =
 
@@ -89,8 +89,9 @@ ans =
 Visualize 512 iterations of ECA rule 30 starting from a single black cell
 
 ```matlab
->> visualize_rule30([zeros(1, 256) 1 zeros(1, 256)], 512, 1)
+>>> visualize_rule30([zeros(1, 256) 1 zeros(1, 256)], 512, 1)
 ```
+![eca](https://github.com/xnought/rand-eca/assets/65095341/3bbbddb2-0402-429f-9561-43b2ff6b31bd)
 
 - [x] rule 30 function that given state produces next state
 - [x] run the rule for x interations and visualize outputs

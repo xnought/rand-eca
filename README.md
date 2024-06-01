@@ -1,6 +1,8 @@
-# rand-eca
+# `rand_eca`
+A function like Matlabs built-in `rand`, but with elementary cellular automata rule 30 -> `rand_eca`. 
 
-Random uniform using elementary cellular automata in matlab. Please see the paper report TODO LINK.
+- [Paper Report](https://xnought.github.io/files/rand_eca.pdf) detailing implementation and examples
+- [`paper_figures.mlx`](./paper_figures.mlx) Matlab live script to reproduce the figures and statistical tests from the paper
 
 <img src="assets/256.png" alt="elementary cellular automata rule 30 with width 200 for 100 iterations"/>
 
